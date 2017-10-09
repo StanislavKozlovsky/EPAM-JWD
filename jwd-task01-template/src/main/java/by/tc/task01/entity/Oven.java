@@ -110,5 +110,4 @@ public class Oven extends Appliance{
 			", width=" + width +
 			'}';
 	}
-
 }

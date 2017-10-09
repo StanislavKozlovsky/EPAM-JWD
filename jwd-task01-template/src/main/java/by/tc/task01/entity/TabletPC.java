@@ -94,5 +94,4 @@ public class TabletPC extends Appliance{
 			", color='" + color + '\'' +
 			'}';
 	}
-
 }

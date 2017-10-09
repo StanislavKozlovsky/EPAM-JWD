@@ -107,5 +107,4 @@ public class VacuumCleaner extends Appliance{
 			", cleaningWidth=" + cleaningWidth +
 			'}';
 	}
-
 }

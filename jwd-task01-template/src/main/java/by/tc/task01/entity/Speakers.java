@@ -81,5 +81,4 @@ public class Speakers extends Appliance{
 			", cordLength=" + cordLength +
 			'}';
 	}
-
 }

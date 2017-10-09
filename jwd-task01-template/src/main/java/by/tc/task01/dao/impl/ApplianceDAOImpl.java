@@ -15,35 +15,33 @@ public class ApplianceDAOImpl implements ApplianceDAO{
 
 	@Override
 	public <E> Appliance find(Criteria<E> criteria) {
-		try(BufferedReader bufferedReader = new BufferedReader(new FileReader(PATH))){
+		try(BufferedReader bufferedReader = new BufferedReader(new FileReader(PATH))) {
 
 			String fileLine;
-			while ((fileLine = bufferedReader.readLine()) != null){
-				if(fileLine.isEmpty()){
+			while ((fileLine = bufferedReader.readLine()) != null) {
+				if (fileLine.isEmpty()) {
 					continue;
 				}
 
 				String applianceName = fileLine.substring(0,fileLine.indexOf(" "));
-				if(applianceName.equals(criteria.getParamClassName())){
+				if (applianceName.equals(criteria.getParamClassName())) {
 
-					boolean containsCriteriaFlag =true;
+					boolean containsCriteriaFlag = true;
 					List<String> listCriteria = criteria.getListCriteria();
-					for(String certainCriterion : listCriteria){
-						if(!fileLine.contains(certainCriterion)){
+					for (String certainCriterion : listCriteria) {
+						if (!fileLine.contains(certainCriterion)) {
 							containsCriteriaFlag = false;
 						}
 					}
 
-					if(containsCriteriaFlag){
+					if (containsCriteriaFlag) {
 						///////////
 					}
 				}
 			}
-		}
-		catch (IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-
 }

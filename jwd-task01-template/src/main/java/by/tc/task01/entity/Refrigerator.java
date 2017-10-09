@@ -110,5 +110,4 @@ public class Refrigerator extends Appliance{
 			", width=" + width +
 			'}';
 	}
-
 }
