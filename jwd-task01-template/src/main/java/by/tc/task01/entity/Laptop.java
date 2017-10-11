@@ -3,19 +3,14 @@ package by.tc.task01.entity;
 public class Laptop extends Appliance{
 
 	private double batteryCapacity;
-	private String Os;
+	private String os;
 	private int memoryRom;
 	private int systemMemory;
 	private double cpu;
 	private int displayInchs;
 
-	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, int displayInchs) {
-		this.batteryCapacity = batteryCapacity;
-		this.Os = os;
-		this.memoryRom = memoryRom;
-		this.systemMemory = systemMemory;
-		this.cpu = cpu;
-		this.displayInchs = displayInchs;
+	public Laptop() {
+
 	}
 
 	public double getBatteryCapacity() {
@@ -27,11 +22,11 @@ public class Laptop extends Appliance{
 	}
 
 	public String getOs() {
-		return Os;
+		return os;
 	}
 
 	public void setOs(String os) {
-		Os = os;
+		os = os;
 	}
 
 	public int getMemoryRom() {
@@ -78,7 +73,7 @@ public class Laptop extends Appliance{
 		if (systemMemory != laptop.systemMemory) return false;
 		if (Double.compare(laptop.cpu, cpu) != 0) return false;
 		if (displayInchs != laptop.displayInchs) return false;
-		return Os != null ? Os.equals(laptop.Os) : laptop.Os == null;
+		return os != null ? os.equals(laptop.os) : laptop.os == null;
 
 	}
 
@@ -88,7 +83,7 @@ public class Laptop extends Appliance{
 		long temp;
 		temp = Double.doubleToLongBits(batteryCapacity);
 		result = (int) (temp ^ (temp >>> 32));
-		result = 31 * result + (Os != null ? Os.hashCode() : 0);
+		result = 31 * result + (os != null ? os.hashCode() : 0);
 		result = 31 * result + memoryRom;
 		result = 31 * result + systemMemory;
 		temp = Double.doubleToLongBits(cpu);
@@ -101,7 +96,7 @@ public class Laptop extends Appliance{
 	public String toString() {
 		return "Laptop{" +
 			"batteryCapacity=" + batteryCapacity +
-			", Os='" + Os + '\'' +
+			", Os='" + os + '\'' +
 			", memoryRom=" + memoryRom +
 			", systemMemory=" + systemMemory +
 			", cpu=" + cpu +

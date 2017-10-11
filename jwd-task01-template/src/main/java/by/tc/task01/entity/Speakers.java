@@ -7,11 +7,8 @@ public class Speakers extends Appliance{
 	private String frequencyRange;
 	private double cordLength;
 
-	public Speakers(int powerConsumption, int numberOfSpeakers, String frequencyRange, double cordLength) {
-		this.powerConsumption = powerConsumption;
-		this.numberOfSpeakers = numberOfSpeakers;
-		this.frequencyRange = frequencyRange;
-		this.cordLength = cordLength;
+	public Speakers() {
+
 	}
 
 	public int getPowerConsumption() {
