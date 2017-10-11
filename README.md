@@ -1,2 +1,1 @@
-# EPAM-JWD
-EPAM Training "Java WEB Development"
+# JWD_Task01_OOP
