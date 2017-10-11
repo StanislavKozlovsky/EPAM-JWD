@@ -21,10 +21,14 @@ public class Criteria<E> {
 		return list;
 	}
 
+	/**
+	 *
+	 * @return E type as a string  OR null if criteria Map is empty
+	 */
 	public String getParamClassName() {
 		for (E e : criteria.keySet()) {
-			String classParamCanonicalName = e.getClass().getCanonicalName();
-			return classParamCanonicalName.substring(classParamCanonicalName.lastIndexOf('.') + 1, classParamCanonicalName.length());
+			String classParamSimpleName = e.getClass().getSimpleName();
+			return classParamSimpleName;
 		}
 		return null;
 	}
