@@ -22,7 +22,7 @@ public class Validator {
 		for (String certainCriterion: userCriteriaList) {
 			String searchCriterion = certainCriterion.substring(0,certainCriterion.indexOf("="));
 			if (!stringTypeSearchCriteria.contains(searchCriterion)) {
-				String value = certainCriterion.substring(certainCriterion.indexOf("=")+1,certainCriterion.length());
+				String value = certainCriterion.substring(certainCriterion.indexOf("=")+1,certainCriterion.length()).trim();
 				try {
 					Double d = Double.parseDouble(value);
 				} catch (NumberFormatException e) {
