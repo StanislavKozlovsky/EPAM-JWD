@@ -15,7 +15,7 @@ public class LaptopCreator implements CreateCommand {
 		laptop.setMemoryRom(Integer.valueOf(criteriaMap.get(SearchCriteria.Laptop.MEMORY_ROM.toString())));
 		laptop.setSystemMemory(Integer.valueOf(criteriaMap.get(SearchCriteria.Laptop.SYSTEM_MEMORY.toString())));
 		laptop.setCpu(Double.valueOf(criteriaMap.get(SearchCriteria.Laptop.CPU.toString())));
-		laptop.setDisplayInchs(Integer.valueOf(SearchCriteria.Laptop.DISPLAY_INCHS.toString()));
+		laptop.setDisplayInchs(Integer.valueOf(criteriaMap.get(SearchCriteria.Laptop.DISPLAY_INCHS.toString())));
 		return laptop;
 	}
 }

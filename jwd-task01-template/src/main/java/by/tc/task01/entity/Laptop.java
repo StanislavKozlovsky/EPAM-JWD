@@ -26,7 +26,7 @@ public class Laptop extends Appliance{
 	}
 
 	public void setOs(String os) {
-		os = os;
+		this.os = os;
 	}
 
 	public int getMemoryRom() {

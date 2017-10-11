@@ -16,7 +16,8 @@ public class Criteria<E> {
 	public List<String> getListCriteria() {
 		List<String> list = new ArrayList<>();
 		for (Map.Entry<E, Object> entry : criteria.entrySet()) {
-			list.add(entry.getKey() + "=" + entry.getValue());
+			String value = entry.getValue().toString().trim();
+			list.add((entry.getKey() + "=" + value));
 		}
 		return list;
 	}
