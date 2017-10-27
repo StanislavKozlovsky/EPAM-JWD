@@ -12,45 +12,43 @@ public class TagInfoPrinter {
 		print(root, " ");
 	}
 
-	private static void print(ComplexTag tag, String space) {
-		System.out.println(space + "name:" + tag.getName());
-		printAttributes(space, tag);
-		System.out.println(space + "nodes:");
-		printNodes(tag, space);
+	private static void print(ComplexTag element, String spaces) {
+		System.out.println('\n' + spaces + "name:" + element.getName());
+		printAttributes(spaces, element);
+		System.out.println(spaces + "nodes:");
+		printNodes(element, spaces);
 	}
 
-	private static void printNodes(Tag element, String space) {
+	private static void printNodes(Tag element, String spaces) {
 		List<Tag> tags = ((ComplexTag)element).getContentTags();
 		if (!tags.isEmpty()) {
-			for (Tag tag : tags) {
+			for (int i = tags.size()-1; i>=0; i--) {
+				Tag tag = tags.get(i);
 				if (tag instanceof ComplexTag) {
-					printComplexTag(space, (ComplexTag) tag);
+					printElem(spaces, (ComplexTag) tag);
 				} else {
-					System.out.println(space + "      " + tag.getContent());
+					System.out.println(spaces + "      " + tag.getContent());
 				}
 			}
 		}
 	}
 
-	private static void printComplexTag(String space, ComplexTag tag) {
-		String largeSpace = space + "      ";
-		print(tag, largeSpace);
+	private static void printElem(String space, ComplexTag tag) {
+		String spaceNew = space + "      ";
+		print(tag, spaceNew);
 	}
 
-	private static void printAttributes(String space, ComplexTag tag) {
-		if (!(tag.getAttributes()).isEmpty()) {
+	private static void printAttributes(String space, ComplexTag element) {
+		if (!(element.getAttributes()).isEmpty()) {
 			System.out.println(space + "attributes:");
-			printAttributes(tag, space);
+			printAttributes(element, space);
 		}
 	}
 
-	private static void printAttributes(ComplexTag tag, String space) {
-		HashMap<String,String> attributes = tag.getAttributes();
+	private static void printAttributes(ComplexTag element, String space) {
+		HashMap<String,String> attributes = element.getAttributes();
 		for (Map.Entry<String,String> attribute : attributes.entrySet()) {
-			System.out.println(space + "   " +
-					attribute.getKey()
-					+ "=\""
-					+ attribute.getValue() + "\"");
+			System.out.println(space + "   " + attribute.getKey() + "=\"" + attribute.getValue() + "\"");
 		}
 	}
 }
